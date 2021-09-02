@@ -1,0 +1,144 @@
+#owl-demo .item { margin: 0.5em; transition: all 0.5s ease 0s; padding: 1em; background: rgb(255, 255, 255); cursor: pointer; }
+#owl-demo .item:hover a { color: rgb(234, 96, 96); }
+#owl-demo .item img { display: block; height: auto; }
+.item img, .item a, .item p { transition: all 0.5s ease 0s; }
+.item img:hover, .item a:hover, .item p:hover { opacity: 1; }
+.owl-theme .owl-controls { margin-top: 10px; text-align: center; }
+.item h4 { margin: 20px 0px 10px; }
+.item h4 a { font-family: open_sansregular; text-transform: uppercase; font-size: 24px; color: rgb(59, 59, 59); display: block; transition: all 0.5s ease 0s; }
+.item h4 a:hover { color: rgb(255, 84, 84); text-decoration: none; }
+.item p { font-family: open_sansregular; font-size: 13px; color: rgb(59, 59, 59); line-height: 1.8em; }
+.owl-theme .owl-controls .owl-buttons div { color: rgb(255, 255, 255); zoom: 1; margin: 5px; height: 85px; width: 34px; display: block; font-size: 12px; transition: all 0.5s ease 0s; }
+.owl-theme .owl-controls .owl-buttons div:hover { opacity: 0.6; }
+.owl-theme .owl-controls.clickable .owl-buttons div:hover { text-decoration: none; }
+.owl-prev { position: absolute; top: 23%; left: -3%; background: url("../images/c-arrows.png") no-repeat; }
+.owl-next { position: absolute; top: 23%; right: -4%; background: url("../images/c-arrows.png") -39px 0px no-repeat; }
+.owl-theme .owl-controls .owl-page { display: inline-block; zoom: 1; }
+.owl-theme .owl-controls .owl-page span { display: block; width: 12px; height: 12px; margin: 5px 7px; opacity: 0.5; border-radius: 20px; background: url("../images/c-arrows.png") no-repeat; }
+.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span { opacity: 1; }
+.owl-theme .owl-controls .owl-page span.owl-numbers { height: auto; width: auto; color: rgb(255, 255, 255); padding: 2px 10px; font-size: 12px; border-radius: 30px; }
+.owl-item.loading { min-height: 150px; background: url("AjaxLoader.gif") center center no-repeat; }
+.owl-carousel .owl-wrapper::after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0px; }
+.owl-carousel { display: none; position: relative; width: 100%; margin: 2% 0px 4%; }
+.owl-carousel .owl-wrapper { display: none; position: relative; transform: translate3d(0px, 0px, 0px); }
+.owl-carousel .owl-wrapper-outer { overflow: hidden; position: relative; width: 100%; }
+.owl-carousel .owl-wrapper-outer.autoHeight { transition: height 500ms ease-in-out 0s; }
+.owl-carousel .owl-item { float: left; }
+.owl-controls .owl-page, .owl-controls .owl-buttons div { cursor: pointer; }
+.owl-controls { user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+.grabbing { cursor: url("grabbing.png") 8 8, move; }
+.owl-carousel .owl-wrapper, .owl-carousel .owl-item { backface-visibility: hidden; transform: translate3d(0px, 0px, 0px); }
+.owl-origin { -webkit-perspective-origin-x: 50%; -webkit-perspective-origin-y: 50%; perspective: 1200px; }
+.owl-fade-out { z-index: 10; animation: 0.7s ease 0s 1 normal both running fadeOut; }
+.owl-fade-in { animation: 0.7s ease 0s 1 normal both running fadeIn; }
+.owl-backSlide-out { animation: 1s ease 0s 1 normal both running backSlideOut; }
+.owl-backSlide-in { animation: 1s ease 0s 1 normal both running backSlideIn; }
+.owl-goDown-out { animation: 0.7s ease 0s 1 normal both running scaleToFade; }
+.owl-goDown-in { animation: 0.6s ease 0s 1 normal both running goDown; }
+.owl-fadeUp-in { animation: 0.5s ease 0s 1 normal both running scaleUpFrom; }
+.owl-fadeUp-out { animation: 0.5s ease 0s 1 normal both running scaleUpTo; }
+@-webkit-keyframes empty { 
+  0% { opacity: 1; }
+}
+@keyframes empty { 
+  0% { opacity: 1; }
+}
+@-webkit-keyframes fadeIn { 
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeIn { 
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes fadeOut { 
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes fadeOut { 
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-webkit-keyframes backSlideOut { 
+  25% { opacity: 0.5; transform: translateZ(-500px); }
+  75% { opacity: 0.5; transform: translateZ(-500px) translateX(-200%); }
+  100% { opacity: 0.5; transform: translateZ(-500px) translateX(-200%); }
+}
+@keyframes backSlideOut { 
+  25% { opacity: 0.5; transform: translateZ(-500px); }
+  75% { opacity: 0.5; transform: translateZ(-500px) translateX(-200%); }
+  100% { opacity: 0.5; transform: translateZ(-500px) translateX(-200%); }
+}
+@-webkit-keyframes backSlideIn { 
+  0%, 25% { opacity: 0.5; transform: translateZ(-500px) translateX(200%); }
+  75% { opacity: 0.5; transform: translateZ(-500px); }
+  100% { opacity: 1; transform: translateZ(0px) translateX(0px); }
+}
+@keyframes backSlideIn { 
+  0%, 25% { opacity: 0.5; transform: translateZ(-500px) translateX(200%); }
+  75% { opacity: 0.5; transform: translateZ(-500px); }
+  100% { opacity: 1; transform: translateZ(0px) translateX(0px); }
+}
+@-webkit-keyframes scaleToFade { 
+  100% { opacity: 0; transform: scale(0.8); }
+}
+@keyframes scaleToFade { 
+  100% { opacity: 0; transform: scale(0.8); }
+}
+@-webkit-keyframes goDown { 
+  0% { transform: translateY(-100%); }
+}
+@keyframes goDown { 
+  0% { transform: translateY(-100%); }
+}
+@-webkit-keyframes scaleUpFrom { 
+  0% { opacity: 0; transform: scale(1.5); }
+}
+@keyframes scaleUpFrom { 
+  0% { opacity: 0; transform: scale(1.5); }
+}
+@-webkit-keyframes scaleUpTo { 
+  100% { opacity: 0; transform: scale(1.5); }
+}
+@keyframes scaleUpTo { 
+  100% { opacity: 0; transform: scale(1.5); }
+}
+@media only screen and (max-width: 1440px) and (min-width: 1366px) {
+  .owl-carousel { width: 95%; margin: 0px auto; padding: 2%; }
+}
+@media only screen and (max-width: 1366px) and (min-width: 1280px) {
+  .owl-carousel { width: 95%; margin: 0px auto; padding: 2%; }
+}
+@media only screen and (max-width: 1280px) and (min-width: 1024px) {
+  .owl-carousel { width: 95%; margin: 0px auto; padding: 2%; }
+  .item h4 a { font-size: 1.2em; }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .owl-carousel { width: 95%; margin: 0px auto; padding: 2%; }
+  .item h4 a { font-size: 1em; }
+  .cau_left img { width: 80%; margin: 0px auto; }
+}
+@media only screen and (max-width: 800px) and (min-width: 640px) {
+  .owl-carousel { width: 95%; margin: 0px auto; padding: 2%; }
+  .item h4 a { font-size: 1em; }
+  .da-slide .da-link { margin-left: 10px; top: 225px; padding: 10px 34px 8px; }
+  .cau_left img { width: 60%; margin: 0px auto; }
+}
+@media only screen and (max-width: 640px) and (min-width: 480px) {
+  .owl-carousel { width: 95%; margin: 0px auto; padding: 2%; }
+  .da-slide .da-link { margin-left: 10px; top: 240px; padding: 10px 34px 8px; }
+  .da-slide { padding: 0px 5%; width: 80%; }
+}
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+  .owl-carousel { }
+  .da-slide .da-link { top: 180px; margin-left: 10px; padding: 8px 18px 6px; font-size: 1.2em; }
+  .cau_left img { width: 50%; margin: 0px auto; }
+  .item h4 a { font-size: 1em; }
+}
+@media only screen and (max-width: 320px) and (min-width: 240px) {
+  .owl-carousel { }
+  #owl-demo .item img { width: 40%; margin: 0px auto; text-align: center; }
+  .cau_left a img { width: 160px; margin: 0px auto; text-align: center; }
+  .da-slide .da-link { top: 160px; margin-left: 10px; padding: 8px 18px 6px; font-size: 13px; }
+  .fa-btn { font-size: 12px; }
+}
